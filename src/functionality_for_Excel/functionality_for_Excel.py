@@ -3,7 +3,7 @@ from openpyxl import load_workbook
 import pandas as pd
 
 def read_single_sheet_DataFrame(workbook, sheet_name):
-        '''Прочитать один лист'''
+        '''Прочитать один лист и создать DataFrame на основе второй и последующих строк данных с заголовками в качестве названий столбцов'''
 
         # Загрузить лист из рабочей книги
         sheet = workbook[sheet_name]
@@ -19,7 +19,7 @@ def read_single_sheet_DataFrame(workbook, sheet_name):
 
 
 def read_multiple_sheets_DataFrame(file_path):
-    '''Прочитать все листы книги'''
+    '''Прочитать все листы книги и объединить их в один DataFrame'''
 
     # Загрузить рабочую книгу
     workbook = load_workbook(file_path)
