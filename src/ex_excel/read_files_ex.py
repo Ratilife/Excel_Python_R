@@ -28,7 +28,7 @@ def read_multiple_sheets(file_path):
     return pd.concat([read_single_sheet(workbook=workbook, sheet_name=sheet_name) for sheet_name in sheet_names], ignore_index=True)
 
 # Определить путь к файлу и названия листов
-file_path = 'iris_data.xlsx'
+file_path = f'F:\Языки\Python\Excel_Python_ R\data\iris_data.xlsx'
 
 # Прочитать данные с нескольких листов
 consolidated_data = read_multiple_sheets(file_path)
