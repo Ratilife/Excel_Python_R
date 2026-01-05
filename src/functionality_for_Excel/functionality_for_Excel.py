@@ -2,7 +2,8 @@
 from openpyxl import load_workbook
 import pandas as pd
 
-def read_single_sheet(workbook, sheet_name):
+def read_single_sheet_DataFrame(workbook, sheet_name):
+        '''Прочитать один лист'''
 
         # Загрузить лист из рабочей книги
         sheet = workbook[sheet_name]
@@ -17,7 +18,8 @@ def read_single_sheet(workbook, sheet_name):
         return pd.DataFrame(sheet_data_raw, columns=columns)
 
 
-def read_multiple_sheets(file_path):
+def read_multiple_sheets_DataFrame(file_path):
+    '''Прочитать все листы книги'''
 
     # Загрузить рабочую книгу
     workbook = load_workbook(file_path)

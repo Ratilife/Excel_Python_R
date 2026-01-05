@@ -24,14 +24,16 @@ def read_multiple_sheets(file_path):
     # Получить список всех названий листов в рабочей книге
     sheet_names = workbook.sheetnames
 
+    print(f"Листы в файле: {sheet_names}")
+
     # Перебрать названия листов, загрузить данные для каждого и объединить их в один DataFrame
     return pd.concat([read_single_sheet(workbook=workbook, sheet_name=sheet_name) for sheet_name in sheet_names], ignore_index=True)
 
 # Определить путь к файлу и названия листов
-file_path = f'F:\Языки\Python\Excel_Python_ R\data\iris_data.xlsx'
+file_path = r'F:\\Языки\\Python\\Excel_Python_R\\data\\iris_data.xlsx'
 
 # Прочитать данные с нескольких листов
 consolidated_data = read_multiple_sheets(file_path)
 
 # Вывести объединенные данные
-print(consolidated_data.head())
+print(consolidated_data)
